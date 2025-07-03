@@ -1,0 +1,45 @@
+### POST create a new release:
+
+POST http://localhost:8080/releases
+Content-Type: application/json
+
+{
+  "name": "Sprint 001 Release",
+  "description": "Release of sprint v001",
+  "status": "IN_DEVELOPMENT",
+  "releaseDate": "2025-06-30"
+}
+
+### PUT update release:
+
+PUT http://localhost:8080/releases/1
+Content-Type: application/json
+
+{
+  "name": "Sprint 001 Release",
+  "description": "Release of sprint v001",
+  "status": "ON_DEV",
+  "releaseDate": "2025-06-30"
+}
+
+### GET all releases:
+
+GET http://localhost:8080/releases
+
+### GET release with id 1:
+
+GET http://localhost:8080/releases/1
+
+
+### GET release by name
+
+GET http://localhost:8080/releases?name=Sprint 001 Release
+
+### GET release by release date
+
+GET http://localhost:8080/releases?releaseDate=2025-06-30
+
+
+### DELETE release
+
+DELETE http://localhost:8080/releases/1

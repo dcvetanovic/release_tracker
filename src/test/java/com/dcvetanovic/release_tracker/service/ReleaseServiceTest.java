@@ -123,7 +123,7 @@ class ReleaseServiceTest {
 
         assertNotNull(results);
         assertFalse(results.isEmpty());
-        assertEquals("Release 1", results.getFirst().getName());
+        assertEquals("Release 1", results.get(0).getName());
     }
 
     @Test
@@ -135,7 +135,7 @@ class ReleaseServiceTest {
 
         assertNotNull(results);
         assertFalse(results.isEmpty());
-        assertEquals(Status.CREATED, results.getFirst().getStatus());
+        assertEquals(Status.CREATED, results.get(0).getStatus());
         verify(releaseRepository).findByStatus(Status.CREATED);
     }
 
@@ -149,7 +149,7 @@ class ReleaseServiceTest {
 
         assertNotNull(results);
         assertFalse(results.isEmpty());
-        assertEquals(date, results.getFirst().getReleaseDate());
+        assertEquals(date, results.get(0).getReleaseDate());
         verify(releaseRepository).findByReleaseDate(date);
     }
 }

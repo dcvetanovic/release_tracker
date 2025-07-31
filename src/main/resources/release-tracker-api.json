@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "Release Tracker API",
+    "_postman_id": "b12345c6-d78f-4e90-a1b0-999abcd12345",
+    "description": "API for managing software releases using Spring Boot + MySQL",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Release",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Release 1\",\n    \"description\": \"Initial release\",\n    \"status\": \"CREATED\",\n    \"releaseDate\": \"2025-08-01\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/releases", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["releases"] }
+      }
+    },
+    {
+      "name": "Get All Releases",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:8080/releases", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["releases"] }
+      }
+    },
+    {
+      "name": "Get Release by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:8080/releases/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["releases", "1"] }
+      }
+    },
+    {
+      "name": "Filter Releases by Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/releases?status=ON_PROD",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["releases"],
+          "query": [{ "key": "status", "value": "ON_PROD" }]
+        }
+      }
+    },
+    {
+      "name": "Update Release",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Updated Release\",\n    \"description\": \"Updated description\",\n    \"status\": \"ON_PROD\",\n    \"releaseDate\": \"2025-08-10\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/releases/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["releases", "1"] }
+      }
+    },
+    {
+      "name": "Delete Release",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": { "raw": "http://localhost:8080/releases/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["releases", "1"] }
+      }
+    }
+  ]
+}

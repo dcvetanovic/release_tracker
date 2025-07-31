@@ -1,23 +1,14 @@
+
 services:
-  app:
-    build: .
-    container_name: release-tracker-app
-    ports:
-      - "8080:8080"
-    depends_on:
-      - mysql
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/release_tracker_db
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
   mysql:
-    image: mysql:8.0
-    container_name: release-tracker-mysql
-    ports:
-      - "3307:3306"
+    image: mysql:8.0.32
+    container_name: mysql_db
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: release_tracker_db
+      MYSQL_DATABASE: release_tracker
+    ports:
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
 

@@ -1,5 +1,6 @@
 package com.dcvetanovic.release_tracker.controller;
 
+import com.dcvetanovic.release_tracker.AbstractIntegrationTest;
 import com.dcvetanovic.release_tracker.dto.ReleaseDTO;
 import com.dcvetanovic.release_tracker.enums.Status;
 import com.dcvetanovic.release_tracker.repository.ReleaseRepository;
@@ -23,11 +24,10 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@ActiveProfiles("test")
 @SpringBootTest
 @AutoConfigureMockMvc
 //@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-public class ReleaseControllerIntegrationTest {
+public class ReleaseControllerIntegrationTest extends AbstractIntegrationTest {
 
     @Autowired
     ReleaseRepository releaseRepository;
@@ -39,6 +39,7 @@ public class ReleaseControllerIntegrationTest {
     private ObjectMapper objectMapper;
 
     private ReleaseDTO testRelease;
+
 
     @BeforeEach
     void setup() {

@@ -55,6 +55,29 @@
 			<version>1.18.32</version> <!-- Use a compatible version, 1.18.34 is a recent stable version -->
 			<scope>provided</scope>
 		</dependency>
+		<!-- Testcontainers Core -->
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>testcontainers</artifactId>
+			<version>1.19.4</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- MySQL Testcontainer -->
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>mysql</artifactId>
+			<version>1.19.4</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JUnit Jupiter -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.10.1</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

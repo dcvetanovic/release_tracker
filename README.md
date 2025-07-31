@@ -52,7 +52,15 @@ cd release_tracker
 - Spring Boot App (Port 8080)
 
 
-API Endpoints
+  3. Connect with DB (I have used DBeaver)
+     - Host: localhost 
+     - Port: 3307 
+     - Database: release_tracker 
+     - Username: root 
+     - Password: root
+
+
+✅ API Endpoints
 
 | Method     | Endpoint                           | Description            |
 | ---------- | ---------------------------------- | ---------------------- |
